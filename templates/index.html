@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flask App new🚀</title>
+    <title>Flask DevOps App 🚀</title>
+
     <style>
-        /* Import Google Font */
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
-        /* Reset Default Styles */
         * {
             margin: 0;
             padding: 0;
@@ -17,9 +15,8 @@
             font-family: 'Poppins', sans-serif;
         }
 
-        /* Background with subtle gradient */
         body {
-            background: linear-gradient(to bottom, #0f0f0f, #1c1c1c);
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
             color: #fff;
             display: flex;
             justify-content: center;
@@ -28,36 +25,61 @@
             padding: 20px;
         }
 
-        /* Glassmorphic Container */
         .container {
-            max-width: 600px;
+            max-width: 700px;
             width: 100%;
             padding: 30px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(12px);
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .container:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 24px rgba(255, 255, 255, 0.1);
-        }
-
-        /* Elegant Heading */
         h1 {
             font-size: 2rem;
             font-weight: 600;
-            background: linear-gradient(135deg, #ff9800, #e65100);
+            background: linear-gradient(135deg, #ff9800, #ffc107);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
 
-        /* Messages Box */
+        .subtitle {
+            font-size: 0.95rem;
+            opacity: 0.85;
+            margin-bottom: 25px;
+        }
+
+        /* DevOps Highlight Card */
+        .devops-card {
+            background: rgba(0, 0, 0, 0.35);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            border-left: 4px solid #00c3ff;
+        }
+
+        .devops-card h2 {
+            font-size: 1.2rem;
+            color: #00c3ff;
+            margin-bottom: 10px;
+        }
+
+        .devops-card p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        /* Jenkins Logo */
+        .jenkins-logo {
+            width: 90px;
+            margin: 15px auto;
+            display: block;
+        }
+
         .messages {
             margin-bottom: 20px;
             padding: 15px;
@@ -69,13 +91,12 @@
 
         .messages p {
             padding: 10px;
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.18);
             border-radius: 8px;
-            margin-bottom: 5px;
-            font-size: 0.95rem;
+            margin-bottom: 6px;
+            font-size: 0.9rem;
         }
 
-        /* Animated Input Fields */
         input[type="text"] {
             width: 100%;
             padding: 12px;
@@ -83,102 +104,92 @@
             background: rgba(255, 255, 255, 0.05);
             color: #fff;
             border-radius: 8px;
-            font-size: 16px;
-            transition: all 0.3s ease;
-            text-align: center;
+            font-size: 15px;
+            margin-bottom: 10px;
         }
 
-        input[type="text"]:focus {
-            border-color: #ff9800;
-            box-shadow: 0 0 12px rgba(255, 152, 0, 0.5);
-            outline: none;
-        }
-
-        /* Glowing Submit Button */
         input[type="submit"] {
             width: 100%;
             padding: 12px;
-            background: linear-gradient(135deg, #ff9800, #e65100);
+            background: linear-gradient(135deg, #00c3ff, #0072ff);
             color: #fff;
             border: none;
             border-radius: 8px;
             cursor: pointer;
-            font-size: 16px;
-            transition: all 0.3s ease;
+            font-size: 15px;
         }
 
         input[type="submit"]:hover {
-            box-shadow: 0 0 20px rgba(255, 152, 0, 0.6);
-            transform: translateY(-2px);
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 600px) {
-            .container {
-                padding: 20px;
-            }
-
-            h1 {
-                font-size: 1.6rem;
-            }
-
-            input[type="text"], input[type="submit"] {
-                font-size: 14px;
-            }
+            box-shadow: 0 0 18px rgba(0, 195, 255, 0.6);
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <h1>Flask + MySQL App [2 tier] - Junoon 🔥</h1>
+<div class="container">
 
-        <div class="messages">
-            {% for message in messages %}
-                <p>{{ message[0] }}</p>
-            {% endfor %}
-        </div>
-
-        <form id="messageForm">
-            <input type="text" name="new_message" placeholder="Type your message..." required>
-            <input type="submit" value="Send">
-        </form>
+    <h1>Flask + MySQL DevOps App 🚀</h1>
+    <div class="subtitle">
+        2-Tier Architecture | CI/CD Learning Project
     </div>
 
-    <!-- jQuery for Smooth AJAX Requests -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $("#messageForm").on("submit", function(event) {
-                event.preventDefault(); // Prevent page reload
+    <!-- DevOps Learning Section -->
+    <div class="devops-card">
+        <h2>📘 Today I Learned: Jenkins</h2>
 
-                let messageInput = $("input[name='new_message']");
-                let message = messageInput.val().trim();
+        <img
+            src="https://www.jenkins.io/images/logos/jenkins/jenkins.svg"
+            alt="Jenkins Logo"
+            class="jenkins-logo"
+        >
 
-                if (message === "") {
-                    alert("Message cannot be empty!");
-                    return;
+        <p>
+            Jenkins is the <strong>heart of CI/CD</strong>.
+            It automates build, test, and deployment pipelines.
+            In real DevOps projects, Jenkins pulls code from Git,
+            builds Docker images, runs tests, and deploys applications
+            automatically with zero manual effort.
+        </p>
+    </div>
+
+    <!-- Messages from MySQL -->
+    <div class="messages">
+        {% for message in messages %}
+            <p>{{ message[0] }}</p>
+        {% endfor %}
+    </div>
+
+    <!-- Message Form -->
+    <form id="messageForm">
+        <input type="text" name="new_message" placeholder="Type your message..." required>
+        <input type="submit" value="Send">
+    </form>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#messageForm").on("submit", function (event) {
+            event.preventDefault();
+
+            let messageInput = $("input[name='new_message']");
+            let message = messageInput.val().trim();
+
+            if (message === "") return;
+
+            $.ajax({
+                url: "/submit",
+                type: "POST",
+                data: { new_message: message },
+                success: function (response) {
+                    $(".messages").append("<p>" + response.message + "</p>");
+                    messageInput.val("");
                 }
-
-                $.ajax({
-                    url: "/submit",
-                    type: "POST",
-                    data: { new_message: message },
-                    success: function(response) {
-                        if (response && response.message) {
-                            $(".messages").append("<p>" + response.message + "</p>");
-                            messageInput.val("");
-                        } else {
-                            console.error("Unexpected response format:", response);
-                        }
-                    },
-                    error: function(xhr, status, error) {
-                        console.error("AJAX Error:", status, error);
-                    }
-                });
             });
         });
-    </script>
-</body>
+    });
+</script>
 
+</body>
 </html>
